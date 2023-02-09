@@ -16,21 +16,23 @@ public class Inventory {
         try (
                 Scanner inventoryInput = new Scanner(inventoryFile);
         ) {
-
             while (inventoryInput.hasNextLine()) {
                 String lineOfText = inventoryInput.nextLine();
                 String[] itemsArr = lineOfText.split("\\|");
-                Item itemChan = new Item(itemsArr[0], itemsArr[1], itemsArr[2], itemsArr[3]);
+                Item itemChan = new Item(itemsArr[0], itemsArr[1], itemsArr[2], itemsArr[3], 5);
                 inventoryMap.put(itemChan.getSlotLocation(), itemChan);
             }
-
         } catch (
                 FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
+    public void subItemInventory(String slotLocation) {
+        inventoryMap.get(slotLocation).decreaseQuantity();
+    }
+
     public Map<String, Item> getInventoryMap() {
-        return this.inventoryMap;
+        return inventoryMap;
     }
 }
