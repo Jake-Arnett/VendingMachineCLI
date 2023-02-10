@@ -12,10 +12,12 @@ public class VendingMachineCLI {
 
 		UserInterface UI = new UserInterface();
 		Inventory machineInventory = new Inventory();
-
+		UI.printWelcome();
 		UI.printMenu();
 		UI.getMenuSelection();
 		UI.loadMoney();
+		UI.pickItem();
+
 
 	}
 }

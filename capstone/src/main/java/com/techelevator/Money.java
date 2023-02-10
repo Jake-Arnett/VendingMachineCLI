@@ -1,17 +1,19 @@
 package com.techelevator;
 
+import java.math.BigDecimal;
+
 public class Money {
-    private int cash = 0;
+    private BigDecimal cash;
 
-    public Money(int cash) {
+    public Money(BigDecimal cash) {
         this.cash = cash;
     }
 
-    public void setCash(int cash) {
+    public void setCash(BigDecimal cash) {
         this.cash = cash;
     }
 
-    public int getCash() {
+    public BigDecimal getCash() {
         return cash;
     }
 }
