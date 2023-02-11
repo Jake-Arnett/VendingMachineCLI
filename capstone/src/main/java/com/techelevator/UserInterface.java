@@ -12,7 +12,7 @@ public class UserInterface {
     private Scanner userInput = new Scanner(System.in);
     Inventory machineInventory = new Inventory();
     BigDecimal zero = new BigDecimal("0.00");
-    MathContext mc = new MathContext(4);
+//    MathContext mc = new MathContext(4);
     Money cash = new Money(zero);
     BigDecimal tender = cash.getCash();
     SystemLog log = new SystemLog();
@@ -20,11 +20,6 @@ public class UserInterface {
 
     public UserInterface() {
         machineInventory.loadInventory();
-
-    }
-
-
-    public void loadInventory() {
 
     }
 
@@ -37,7 +32,6 @@ public class UserInterface {
     }
 
     public void printInventory() {
-
         for (Map.Entry<String, Item> item : machineInventory.getInventoryMap().entrySet()) {
             System.out.println(item.getValue().toString());
         }

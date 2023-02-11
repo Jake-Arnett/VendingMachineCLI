@@ -17,8 +17,5 @@ public class VendingMachineCLI {
 		UI.getMenuSelection();
 		UI.loadMoney();
 		UI.pickItem();
-
-
-
 	}
 }
