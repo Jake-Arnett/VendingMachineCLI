@@ -123,6 +123,11 @@ public class UserInterface {
                 if (cash.getCash().compareTo(machineInventory.getInventoryMap().get(userIn).getPrice()) == 1
                         || cash.getCash().compareTo(machineInventory.getInventoryMap().get(userIn).getPrice()) == 0) {
 
+                    if(machineInventory.getInventoryMap().get(userIn).getQuantity() == 0){
+                        System.out.println("Item is sold out. Sorry!");
+                        getMenuSelection();
+                    }
+
                     machineInventory.getInventoryMap().get(userIn).decreaseQuantity();
                     tender = cash.getCash().subtract(machineInventory.getInventoryMap().get(userIn).getPrice());
                     System.out.printf("Dispensing %s: %s \n", userIn, machineInventory.getInventoryMap().get(userIn).getProductName());
